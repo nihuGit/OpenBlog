@@ -30,6 +30,12 @@
 }
 
 @layer utilities {
+  .progress-bar {
+    @apply fixed top-0 left-0 w-full h-1 bg-transparent z-50;
+  }
+  .progress-bar__indicator {
+    @apply h-full bg-primary-base transition-all;
+  }
     .hero {
         @apply relative w-full max-w-8xl mx-auto my-4 ;
       }
@@ -71,6 +77,36 @@
   
 
       /* left part styles */
+      /* Layout Block */
+.layout {
+  @apply py-8;
+}
+
+.layout__container {
+  @apply container mx-auto;
+}
+
+.layout__grid {
+  @apply grid grid-cols-1 lg:grid-cols-12 gap-8;
+}
+
+/* Sidebar Block */
+.sidebar {
+  @apply lg:col-span-2 space-y-6;
+}
+
+.sidebar--hidden {
+  @apply hidden lg:block;
+}
+
+.sidebar__content {
+  @apply space-y-6;
+}
+
+.sidebar__content--sticky {
+  @apply sticky top-12;
+}
+
       .report-card {
         @apply  rounded-3xl py-5 px-3;
       }
@@ -147,7 +183,7 @@
             
             /* Blog Container */
             .blog {
-                @apply lg:col-span-7 space-y-6 px-4 md:px-6 lg:px-8;
+                @apply lg:col-span-7 space-y-6  lg:px-8;
             }
             .blog__header{
                 @apply flex flex-col md:flex-row justify-between items-start md:items-center pb-6 mb-6;
@@ -297,7 +333,7 @@
 }
 
 .subscription {
-  @apply mt-6 md:mt-8 lg:mt-10 py-2 lg:py-4;
+  @apply mt-6 md:mt-8 lg:mt-10 py-2 lg:py-4 md:w-1/2 lg:w-full mx-auto;
 }
 
 .subscription__text {

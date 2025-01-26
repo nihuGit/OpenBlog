@@ -11,6 +11,11 @@
         rel="stylesheet">
     </head>
     <body>
+        <div class="progress-bar">
+            <div id="progress-bar" class="progress-bar__indicator"></div>
+          </div>
+
+
         <div class="hero">
             <div class="hero__container hero__container--white" style="background-image: url('images/heroImage__01.webp');">
               <div class="hero__overlay"></div>
@@ -23,12 +28,12 @@
             </div>
           </div>
 
-          <div class="container mx-auto py-8">
+          <div class=" layout layout__container">
             <!-- Main Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="layout__grid">
                 <!-- Left Sidebar (Sticky from Top) -->
-                <div class="lg:col-span-2 space-y-6 hidden lg:block">
-                    <div class="sticky top-12 space-y-6">
+                <div class=" sidebar sidebar--hidden">
+                    <div class="sidebar__content sidebar__content--sticky">
                         <!-- Dark Web Report -->
                         <div class="report-card report-card--container">
                             <h5 class="report-card__heading--small">Free Dark Web Report</h5>
@@ -112,9 +117,13 @@
                                 A machine learning model analyzing data to detect cyber threats in real-time.
                             </p>
                         </div>
+
+                        
+                          
+                          
                     
                         <!-- Content Section 1 -->
-                        <h3>Role of Machine Learning in manufacturing and production unite , ??</h3>
+                        <h3>Role of Machine Learning in manufacturing and production unite.</h3>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium tempora iure, minima molestiae eligendi voluptate omnis, cupiditate dolore deleniti doloremque expedita? Nisi repellat nesciunt sequi excepturi quasi!
                         </p>
@@ -318,6 +327,15 @@
         <script src="" async defer></script>
 
         <script>
+
+            // JavaScript to update the scroll progress bar
+    window.addEventListener("scroll", () => {
+        const progressBar = document.getElementById("progress-bar");
+        const scrollTop = window.scrollY; // Get the current scroll position
+        const documentHeight = document.body.scrollHeight - window.innerHeight; // Calculate the scrollable height
+        const scrollPercentage = (scrollTop / documentHeight) * 100; // Calculate the scroll percentage
+        progressBar.style.width = `${scrollPercentage}%`; // Update the width of the progress bar
+      });
 
             document.addEventListener('DOMContentLoaded', () => {
                 const tocCard = document.querySelector('.toc-card');
