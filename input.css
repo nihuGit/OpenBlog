@@ -83,20 +83,20 @@
 }
 
 .layout__container {
-  @apply container mx-auto;
+  @apply max-w-8xl mx-auto;
 }
 
 .layout__grid {
-  @apply grid grid-cols-1 lg:grid-cols-12 gap-8;
+  @apply grid grid-cols-1 xl:grid-cols-12 gap-8;
 }
 
 /* Sidebar Block */
 .sidebar {
-  @apply lg:col-span-2 space-y-6;
+  @apply xl:col-span-2 space-y-6;
 }
 
 .sidebar--hidden {
-  @apply hidden lg:block;
+  @apply hidden xl:block;
 }
 
 .sidebar__content {
@@ -108,7 +108,7 @@
 }
 
       .report-card {
-        @apply  rounded-3xl py-5 px-3;
+        @apply  rounded-3xl py-5 px-4 ;
       }
         .report-card--container {
           @apply bg-neutral-card text-center ;
@@ -140,7 +140,7 @@
       
           /* TOC card */
           .toc-card {
-            @apply bg-neutral-card text-primary-main rounded-3xl py-5 px-4 ;
+            @apply bg-neutral-card text-primary-main rounded-3xl py-5 px-4  ;
           }
           
             .toc-card__header {
@@ -183,7 +183,7 @@
             
             /* Blog Container */
             .blog {
-                @apply lg:col-span-7 space-y-6  lg:px-8;
+                @apply xl:col-span-7 space-y-6  lg:px-8;
             }
             .blog__header{
                 @apply flex flex-col md:flex-row justify-between items-start md:items-center pb-6 mb-6;
@@ -289,15 +289,15 @@
 
             /* right part */
             .related-articles-container{
-                @apply lg:col-span-3 space-y-6 px-4 mt-6;
+                @apply xl:col-span-3 space-y-6  ;
             }
 
 .related-articles {
-  @apply sticky lg:-top-1/4;
+  @apply sticky lg:-top-1/4 lg:px-8 xl:px-0;
 }
 
 .related-articles__card {
-  @apply bg-neutral-card p-4 lg:px-8 lg:py-10 rounded-3xl;
+  @apply bg-neutral-card p-4   md:px-8 md:py-10 rounded-3xl;
 }
 
 .related-articles__header {
@@ -313,7 +313,7 @@
 }
 
 .related-articles__list {
-  @apply space-y-4 mt-4 lg:mt-10;
+  @apply space-y-4 mt-4 xl:mt-10;
 }
 
 .related-articles__item {
@@ -333,7 +333,7 @@
 }
 
 .subscription {
-  @apply mt-6 md:mt-8 lg:mt-10 py-2 lg:py-4 md:w-1/2 lg:w-full mx-auto;
+  @apply mt-6 md:mt-8 xl:mt-10 py-2 xl:py-4 md:w-1/2 xl:w-full mx-auto;
 }
 
 .subscription__text {
