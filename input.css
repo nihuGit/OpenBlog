@@ -299,7 +299,7 @@
             }
 
 .related-articles {
-  @apply sticky xl:-top-1/4 mt-12;
+  @apply sticky xl:-top-1/4 mt-12 px-4 xl:px-0;
 }
 
 .related-articles__card {

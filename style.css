@@ -1517,11 +1517,15 @@ h5 {
 .related-articles {
   position: sticky;
   margin-top: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 @media (min-width: 1280px) {
   .related-articles {
     top: -25%;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 
