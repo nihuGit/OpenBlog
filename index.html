@@ -74,12 +74,12 @@
                         <!-- Breadcrumb Navigation -->
                         <div class="blog__header__breadcrumb blog__header__breadcrumb--gray">
                             <a href="#" class="blog__header__breadcrumb__link">Home</a>
-                            <span class="">
-                                >
+                            <span class="text-xs">
+                               &gt;
                             </span>
                             <a href="#" class="blog__header__breadcrumb__link">Resources</a>
-                            <span class="">
-                                ></i>
+                            <span class="text-xs">
+                                &gt;
                             </span>
                             <span class="text-accent-light">Blog</span>
                         </div>
@@ -264,7 +264,7 @@
                           <div class="related-articles__item">
                             <img src="/images/relatedImage__01.webp" alt="Article 1" class="related-articles__image">
                             <div>
-                                <a href="" class="related-articles__link">Mastering Ransomware...</a>
+                                <a href="" class="related-articles__link" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo quo dolorem veritatis!</a>
                               <p class="related-articles__date">Jan 23, 2025</p>
                             
                             </div>
@@ -273,7 +273,7 @@
                           <div class="related-articles__item">
                             <img src="/images/relatedImage__01.webp" alt="Article 1" class="related-articles__image">
                             <div>
-                                <a href="" class="related-articles__link">Top 10 AI-Powered Cybersecurity...</a>
+                                <a href="" class="related-articles__link">Top 10 AI-Powered Cybersecurit Lorem ipsum dolor sit amet consectetur.</a>
                               <p class="related-articles__date">Jan 23, 2025</p>
                             
                             </div>
@@ -282,7 +282,7 @@
                           <div class="related-articles__item">
                             <img src="/images/relatedImage__01.webp" alt="Article 1" class="related-articles__image">
                             <div>
-                                <a href="" class="related-articles__link">MThe Importance of Cyber Hygiene: Best...</a>
+                                <a href="" class="related-articles__link">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus enim quibusdam tempore quam soluta?</a>
                               <p class="related-articles__date">Jan 23, 2025</p>
                             
                             </div>
@@ -291,7 +291,7 @@
                           <div class="related-articles__item">
                             <img src="/images/relatedImage__01.webp" alt="Article 1" class="related-articles__image">
                             <div>
-                                <a href="" class="related-articles__link">Comprehensive Guide to IoC </a>
+                                <a href="" class="related-articles__link">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum cum similique fugit. </a>
                               <p class="related-articles__date">Jan 23, 2025</p>
                             
                             </div>
@@ -300,7 +300,7 @@
                           <div class="related-articles__item">
                             <img src="/images/relatedImage__01.webp" alt="Article 1" class="related-articles__image">
                             <div>
-                                <a href="" class="related-articles__link">SOCRadar's Takedown...</a>
+                                <a href="" class="related-articles__link">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt, eum.</a>
                               <p class="related-articles__date">Jan 23, 2025</p>
                             
                             </div>
@@ -392,7 +392,41 @@
                 window.addEventListener("scroll", setActiveLink);
               });
               
-            
+              function truncateText() {
+                const elements = document.querySelectorAll(".related-articles__link");
+    
+                elements.forEach(element => {
+                    const words = element.dataset.originalText.split(" ");
+                    let wordCount;
+    
+                    // Get screen width
+                    const screenWidth = window.innerWidth;
+    
+                    if (screenWidth >= 1280) { // XL Screens
+                        wordCount = 2;
+                    } else if (screenWidth >= 1024) { // Large Screens (lg)
+                        wordCount = 12;
+                    } else if (screenWidth >= 768) { // Medium Screens (md)
+                        wordCount = 10;
+                    } else { // Mobile Screens (sm)
+                        wordCount = 6;
+                    }
+    
+                    // Truncate text
+                    element.innerText = words.slice(0, wordCount).join(" ") + (words.length > wordCount ? "..." : "");
+                });
+            }
+    
+            // Store original text before truncating (prevents losing words on resize)
+            document.querySelectorAll(".related-articles__link").forEach(element => {
+                element.dataset.originalText = element.innerText;
+            });
+    
+            // Run on page load
+            truncateText();
+    
+            // Run on window resize
+            window.addEventListener("resize", truncateText);
               
         </script>
     </body>
